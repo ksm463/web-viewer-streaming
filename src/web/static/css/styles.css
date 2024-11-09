@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+}
+#menu-bar {
+    height: 50px;
+    background-color: gray;
+    color: #fff;
+    line-height: 50px;
+    text-align: left;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+#menu-bar button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+#menu-bar button i {
+    margin-right: 5px;
+}
+
+#videoCanvas {
+    width: 100%;
+    height: calc(100vh - 50px); /* 메뉴바 높이를 뺀 전체 화면 높이 */
+    object-fit: cover; /* 비디오가 캔버스 크기에 맞도록 조정 */
+    background-color: black; /* 초기 배경색을 검은색으로 설정 */
+}
+
+/* 모달 창 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-body {
+    max-height: 60vh; /* 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤바 표시 */
+}
+
+.modal-content {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 채널 모달 창의 너비 조절 */
+#channel-modal .modal-content {
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* 채널 모달 헤더 중앙 정렬 유지 */
+#channel-modal .modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 상단 버튼 스타일 */
+.modal-header button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 활성화된 RTSP 버튼 */
+.rtsp-btn.active {
+    background-color: orange;
+    color: white;
+}
+
+/* 활성화된 ONVIF 버튼 */
+.onvif-btn.active {
+    background-color: orange;
+    color: white;
+}
+
+/* 비활성화된 ONVIF 및 RTSP 버튼 */
+.rtsp-btn, .onvif-btn {
+    background-color: lightgray;
+    color: black;
+}
+
+/* 입력 필드 스타일 */
+.modal-body input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 채널 리스트 스타일 */
+.channel-list {
+    width: 100%;
+}
+
+/* 컬럼 헤더 스타일 */
+.channel-list-header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* 채널 아이템 스타일 */
+.channel-item {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.channel-item:hover {
+    background-color: #f9f9f9;
+}
+
+.channel-item.selected {
+    background-color: #d0d0d0;
+}
+
+.channel-column {
+    padding: 0 10px;
+    word-break: break-all;
+}
+
+/* 하단 버튼 스타일 */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-footer button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer .query-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+}

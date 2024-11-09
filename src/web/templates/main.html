@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Stream</title>
+    <link rel="stylesheet" href="/web/static/css/styles.css">
+    <!-- Font Awesome CSS 추가 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+
+</head>
+<body>
+  <div id="menu-bar">
+    <button id="connect-button">
+      <i class="fas fa-folder"></i> RTSP 정보 입력
+    </button>
+    <button id="close-button">
+      <i class="fas fa-stop"></i> 재생 중단
+    </button>
+  </div>
+<canvas id="videoCanvas" width="640" height="480"></canvas>
+<!-- ONVIF Modal -->
+<div id="onvif-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="onvif-btn">ONVIF</button>
+            <button class="rtsp-btn">RTSP</button>
+        </div>
+        <div class="modal-body">
+            <input type="text" name="onvifIp" placeholder="IP 주소">
+            <input type="text" name="onvifId" placeholder="ID">
+            <input type="password" name="onvifPw" placeholder="PW">
+        </div>
+        <div class="modal-footer">
+            <button id="search-button" class="search-button">조회</button>
+            <button class="close-modal">닫기</button>
+        </div>
+    </div>
+</div>
+<!-- RTSP Modal -->
+<div id="rtsp-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="onvif-btn">ONVIF</button>
+            <button class="rtsp-btn active">RTSP</button>
+        </div>
+        <div class="modal-body">
+            <input type="text" name="rtspAddress" placeholder="RTSP 주소">
+            <input type="text" name="rtspId" placeholder="ID">
+            <input type="password" name="rtspPw" placeholder="PW">
+        </div>
+        <div class="modal-footer">
+            <button class="play-button">재생</button>
+            <button class="close-modal">닫기</button>
+        </div>
+    </div>
+</div>
+<!-- Channel Modal -->
+<div id="channel-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>channel List</h3>
+        </div>
+        <div class="modal-body">
+            <div class="channel-list">
+                <!-- 컬럼 헤더 -->
+                <div class="channel-list-header">
+                    <div class="channel-column channel-number">Channel</div>
+                    <div class="channel-column channel-resolution">Resolution</div>
+                    <div class="channel-column channel-fps">FPS</div>
+                    <div class="channel-column channel-codec">Codec</div>
+                </div>
+                <!-- 채널 아이템들이 여기에 동적으로 추가됩니다 -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="play-button">재생</button>
+            <button class="close-modal">닫기</button>
+        </div>
+    </div>
+</div>
+<script src="/web/static/js/script.js"></script>
+</body>
+</html>
