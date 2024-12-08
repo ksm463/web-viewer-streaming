@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.templating import Jinja2Templates
 
@@ -13,6 +13,9 @@ templates = Jinja2Templates(directory="/web-viewer-streaming/src/web/templates")
 
 @get_router.get("/get_onvif_list")
 async def get_onvif_list(ip, port, id, pwd):
+    if not ip or not port or not id or not pwd:
+        raise HTTPException(status_code=400, detail="누락된 입력 정보가 있습니다.")
+    
     return get_onvif_rtsp_address_list(ip, port, id, pwd)
 
 
