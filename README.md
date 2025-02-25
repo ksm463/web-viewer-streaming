@@ -17,4 +17,4 @@ RTSP로 불러온 CCTV영상 스트리밍을 보여주기 위한 페이지입니
 ![화면 캡처 2024-12-19 094352](https://github.com/user-attachments/assets/b44ce3d8-48e2-4a47-b3b7-d166dfed31f3)
 
 ### 재생 버튼을 클릭하면 영상이 재생됩니다.
-![화면 캡처 2024-12-19 100117](https://github.com/user-attachments/assets/7073abd6-ad01-4265-9bf0-cb4689df61b2)
+
